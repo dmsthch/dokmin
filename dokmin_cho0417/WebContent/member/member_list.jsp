@@ -43,7 +43,7 @@
 			<%@include file="member_searchform.jsp"%>
 			</div>
 		
-      	
+      	</div>
 		
 		<table class="table table-hover">
 		    <thead>
@@ -83,6 +83,6 @@
 	%>
 		    </tbody>
 		</table>
-	</div>	
+	</div>
 </body>
 </html>

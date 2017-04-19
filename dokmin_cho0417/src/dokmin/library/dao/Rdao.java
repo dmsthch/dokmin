@@ -10,7 +10,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import dokmin.library.dto.Book;
 import dokmin.library.dto.Member;
 import dokmin.library.dto.Rental;
 
@@ -152,20 +151,17 @@ public class Rdao {
 				
 				return r;
 			}
-		//도서 상태가 어떤지 체크하는 메서드
-			public Book rentalBookCheck(String book_code) throws SQLException{
+			
+			public String rentalBookCheck(String book_code) throws SQLException{
 				System.out.println("도서 체크 메서드 실행 Rdao.java");
 				conn=ds.getConnection();
-				pstmt = conn.prepareStatement("select book_title, book_state FROM book where book_code=?");
+				pstmt = conn.prepareStatement("select book_state FROM book where book_code=?");
 				pstmt.setString(1,book_code);
 				rs = pstmt.executeQuery();
 				String result=null;
-				Book b = null;
 				if(rs.next()){
-					b = new Book();
-					b.setBook_title(rs.getString("book_title"));
-					b.setBook_state(rs.getString("book_state"));
+					result = rs.getString("book_state");
 				}
-				return b;
+				return result;
 			}
 }
