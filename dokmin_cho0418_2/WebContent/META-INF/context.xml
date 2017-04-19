@@ -1,0 +1,12 @@
+ <Context> 
+     <Resource name="jdbc/MysqlDB" 
+         auth="Container"
+         type="javax.sql.DataSource" 
+         username="dokminid"
+         password="dokminpw"
+         driverClassName="com.mysql.jdbc.Driver"
+         factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+         url="jdbc:mysql://localhost:3306/dokmin?characterEncoding=euckr"
+         maxActive="500"
+         maxIdle="100"/>
+ </Context>
