@@ -25,7 +25,8 @@ $(document).ready(function(){
 			data : {book_code:checkValue},
 			success : function(data){
 				//alert('성공'+data);
-				 $('#bookCheck').parent().parent().find('input')
+				$('#bookCheck').parent().parent().find('.selectResult').html('');
+				 $('#bookCheck').parent().parent().find('.selectResult').append(data);
 			}
 		})
 	})
@@ -87,11 +88,13 @@ $(document).ready(function(){
 	 	<div id="num">
 		<div  class="row">
 		  <div class="col-sm-4">도서일련번호</div>
-		  <div class="col-sm-6"><input id="Book_code" name="Book_code" type="text" class="form-control" placeholder="도서일련번호를 입력해주세요"></div>
+		  <div class="col-sm-3"><input id="Book_code" name="Book_code" type="text" class="form-control" placeholder="도서일련번호를 입력해주세요"></div>
 		  <div class="col-sm-1"><button id="bookCheck" type="button" class="btn btn-default btn-sm bookCheck"> 도서 확인
       		  </button>
     		</div>
-    		<div class="col-sm-1"></div> 
+    		<div class="col-sm-2 selectResult"></div>
+    		<div class="col-sm-2"><button id="plus" type="button" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-plus"></span></button></div>
+ 
 		</div>
 		
 		</div> 
